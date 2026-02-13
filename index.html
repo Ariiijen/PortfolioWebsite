@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a class="site-logo" href="#" aria-label="Homepage">Ally</a>
+        <nav id="navbar" aria-label="Primary">
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <p class="intro">Hey, I'm <strong>Allyza Jane D. Espragera</strong></p>
+                <h1 class="hero-title">Aspiring <span class="accent">Web</span><br>Designer</h1>
+                <p class="hero-copy">Welcome to my personal portfolio website showcasing my projects and skills.</p>
+                <div class="hero-actions">
+                    <a class="btn primary" href="#contact">Get In Touch</a>
+                    <a class="btn ghost" href="#projects">Browse Projects</a>
+                </div>
+            </div>
+            <figure class="hero-figure">
+                <img src="assets/images/profile.jpg" alt="Profile Picture" width="300" height="300">
+                <figcaption class="visually-hidden">Profile picture</figcaption>
+            </figure>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate web designer with experience in creating responsive and user-friendly websites. I enjoy learning new technologies and applying them to solve real-world problems.</p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <ol>
+                <li>Bachelor of Science in Information Technology - University of the Philippines</li>
+                <li>High School Diploma - Pagatpat National High School</li>
+                <li>Elementary School Diploma - Pagatpat Elementary School</li>
+            </ol>
+        </section>
+
+        <section id="skills">
+            <h2>Skills <span aria-hidden="true"></span></h2>
+            <div class="skills-grid">
+                <div class="skill-column">
+                    <h3>Web Design</h3>
+                    <ul>
+                        <li>UI/UX Design</li>
+                        <li>Responsive Design</li>
+                        <li>Wireframing</li>
+                        <li>User Research</li>
+                    </ul>
+                </div>
+                <div class="skill-column">
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>HTML 5</li>
+                        <li>CSS3</li>
+                    </ul>
+                </div>
+                <div class="skill-column">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+                <div class="skill-column">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Communication</li>
+                        <li>Collaboration</li>
+                        <li>Problem Solving</li>
+                        <li>Leadership</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-cards">
+                <article class="card">
+                    <h3>Library Management System</h3>
+                    <p>A web-based application for managing library resources and user accounts.</p>
+                    <p><a href="https://library-book-system.vercel.app/" target="_blank" rel="noopener noreferrer">Visit</a></p>
+                </article>
+                <article class="card">
+                    <h3>Student Grade Calculator</h3>
+                    <p>A simple web application for calculating student grades.</p>
+                    <p><a href="https://grade-calculator-nine-dun.vercel.app/" target="_blank" rel="noopener noreferrer">Visit</a></p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Personal Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

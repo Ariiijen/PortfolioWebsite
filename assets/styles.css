@@ -1,0 +1,556 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header and Navigation */
+/* Header and Navigation */
+header {
+    background-color: #FF52A0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.site-title {
+    color: #fff;
+    font-size: 1.25em;
+    letter-spacing: 0.5px;
+}
+
+.site-logo {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05em;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus {
+    left: 10px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    z-index: 2000;
+}
+
+#navbar > ul {
+    /* child combinator demonstrates > selector */
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#navbar li {
+    margin: 0 15px;
+}
+
+#navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    transition: background-color 0.25s, transform 0.15s;
+}
+
+/* Pseudo-class selectors for interaction */
+#navbar a:hover,
+#navbar a:focus {
+    background-color: #E491C9;
+    outline: none;
+}
+
+#navbar a:active {
+    background-color: #777;
+    transform: translateY(1px);
+}
+
+/* Main Content */
+main {
+    margin-top: 80px; /* To account for fixed nav height */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    font-size: 1.5em; /* uses relative unit em as required */
+}
+
+/* About Section */
+#about p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* About figure */
+figure {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    display: inline-block;
+    border: 6px solid #fff; /* shows box-model border */
+}
+
+/* Hero Section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+    background: transparent; /* keep outer section background white by section rules */
+}
+
+.hero-content .intro {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 1.02;
+    margin: 0 0 12px 0;
+    color: #111;
+    letter-spacing: -1px;
+}
+
+.accent {
+    color: #FF52A0 /* purple accent */
+}
+
+.hero-copy {
+    max-width: 56ch;
+    margin-bottom: 18px;
+    color: #666;
+}
+
+.hero-actions .btn {
+    display: inline-block;
+    margin-right: 12px;
+    text-decoration: none;
+}
+
+.btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.btn.primary {
+    background: #111;
+    color: #fff;
+}
+
+.btn.ghost {
+    background: #fff;
+    color: #111;
+    border-color: #ddd;
+}
+
+.hero-figure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-figure img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid rgba(107,33,168,0.08);
+    box-shadow: 0 0 0 8px rgba(107,33,168,0.03), 0 8px 24px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; text-align: center; }
+    .hero-figure { order: -1; margin-bottom: 20px; }
+}
+
+/* Education Section */
+#education ol {
+    padding-left: 20px;
+}
+
+/* Skills grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.skill-column h3 {
+    font-size: 1.05em;
+    margin-bottom: 8px;
+}
+
+.skill-column ul {
+    list-style: none;
+    color: #666;
+    padding-left: 0;
+}
+
+.skill-column li {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    line-height: 1.4;
+    background: transparent; /* ensure no background */
+    box-shadow: none;         /* remove any shadow */
+    padding: 0;               /* no inner padding */
+}
+
+.accent-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #6b21a8;
+    border-radius: 50%;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* Skills Section */
+#skills ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#skills li {
+    background-color: #e0e0e0;
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Projects Section */
+.project-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 1 1 300px;
+    margin: 10px;
+    padding: 20px; /* demonstrates padding */
+    border: 1px solid #ddd; /* demonstrates border */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* demonstrates shadow */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover,
+.card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* Card media and content */
+.card-media {
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+
+.card-media img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    margin: 0 0 8px 0;
+    font-size: 1.15em;
+    color: #111;
+}
+
+.card-desc {
+    margin: 0 0 12px 0;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.card-tags {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    margin: 0 0 12px 0;
+}
+
+.card-tags li {
+    font-size: 0.85em;
+    color: #888;
+}
+
+.project-actions {
+    margin-top: auto;
+}
+
+.btn.small {
+    padding: 8px 12px;
+    font-size: 0.9em;
+    border-radius: 6px;
+}
+
+.btn.primary {
+    background: linear-gradient(180deg, #222, #111);
+    color: #fff;
+    border: none;
+}
+
+.btn.ghost {
+    background: transparent;
+    color: #111;
+    border: 1px solid #ddd;
+}
+
+.card:hover .card-media img {
+    transform: scale(1.03);
+    transition: transform 0.35s ease;
+}
+
+/* Contact Section */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 0 5px rgba(51,51,51,0.3);
+}
+
+button {
+    padding: 10px 14px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.08s ease;
+}
+
+button:hover,
+button:focus {
+    background-color: #555;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #FF52A0;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #navbar ul {
+        flex-direction: column;
+    }
+
+    #navbar li {
+        margin: 0;
+    }
+
+    .project-cards {
+        flex-direction: column;
+    }
+
+    #skills ul {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 900px) {
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .skills-grid { grid-template-columns: 1fr; }
+}
+
+/* Additional responsive improvements */
+/* Fluid container */
+@media (min-width: 1200px) {
+    main { padding: 40px; }
+}
+
+/* Projects: use grid for better wrapping and equal heights */
+.project-cards {
+    /* Use Flexbox so the Projects section meets the lab requirement */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Default: three columns on wide screens */
+.project-cards .card {
+    flex: 0 1 calc(33.333% - 13.333px);
+    max-width: calc(33.333% - 13.333px);
+}
+
+/* Medium screens: two columns */
+@media (max-width: 900px) {
+    .project-cards .card {
+        flex: 0 1 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+}
+
+/* Small screens: single column */
+@media (max-width: 480px) {
+    .project-cards .card {
+        flex: 0 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Make CTA buttons stack on small screens */
+@media (max-width: 600px) {
+    .hero-actions .btn {
+        display: block;
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+
+    .project-actions .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    header {
+        padding: 10px 14px;
+    }
+
+    #navbar > ul {
+        gap: 6px;
+        align-items: center;
+    }
+}
+
+/* Header and nav on small screens */
+@media (max-width: 768px) {
+    header { flex-direction: column; align-items: stretch; }
+    .site-logo { padding: 10px 0; display: inline-block; }
+    #navbar { order: 2; }
+    #navbar > ul { justify-content: center; flex-wrap: wrap; }
+    #navbar a { padding: 10px 12px; }
+}
+
+/* Ensure images and figures scale nicely */
+.card-media img, .hero-figure img {
+    width: 100%;
+    height: auto;
+}
+
+/* Form inputs full width */
+input, textarea { width: 100%; box-sizing: border-box; }
+
+/* Slightly increase touch targets on mobile */
+@media (max-width: 480px) {
+    #navbar a { padding: 12px 14px; }
+    .btn { padding: 12px 16px; }
+}
+
+/* Fine tune typography for large and small screens */
+:root {
+    --base-font: 16px;
+}
+html { font-size: 100%; }
+body { font-size: 1rem; }
+
+@media (min-width: 1400px) {
+    .hero-title { font-size: clamp(2.5rem, 6vw, 5rem); }
+}
+    
+@media (max-width: 420px) {
+    .hero-title { font-size: 1.8rem; }
+}
+
+/* End of stylesheet - selectors include element, class, ID, child combinator, pseudo-classes */
