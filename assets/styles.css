@@ -207,11 +207,11 @@ img {
 
 .hero-figure img {
     width: 260px;
-    height: 260px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 6px solid rgba(107,33,168,0.08);
-    box-shadow: 0 0 0 8px rgba(107,33,168,0.03), 0 8px 24px rgba(0,0,0,0.08);
+    /* Ensure card media images scale nicely; keep hero image sizing explicit */
+    .card-media img {
+        width: 100%;
+        height: auto;
+    }
 }
 
 @media (max-width: 900px) {
@@ -522,6 +522,11 @@ footer {
     #navbar > ul { justify-content: center; flex-wrap: wrap; }
     #navbar a { padding: 10px 12px; }
 }
+
+    /* Prevent the fixed header from covering main content when nav stacks */
+    @media (max-width: 768px) {
+        main { margin-top: 260px; }
+    }
 
 /* Ensure images and figures scale nicely */
 .card-media img, .hero-figure img {
