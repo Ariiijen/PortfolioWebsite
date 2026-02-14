@@ -283,8 +283,12 @@ img {
 .project-cards {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 20px;
+}
+
+.project-card {
+    flex: 1;
+    max-width: 32%;
 }
 
 .card {
@@ -462,18 +466,18 @@ footer {
 
 /* Projects: use grid for better wrapping and equal heights */
 .project-cards {
-    /* Use Flexbox so the Projects section meets the lab requirement */
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    gap: 2px;
     justify-content: space-between;
+    align-items: stretch;
 }
 
-/* Default: three columns on wide screens */
+/* 3 cards in one row */
 .project-cards .card {
-    flex: 0 1 calc(33.333% - 13.333px);
-    max-width: calc(33.333% - 13.333px);
+    flex: 0 0 calc(33.333% - 13.33px);
+    max-width: calc(33.333% - 13.33px);
 }
+
 
 /* Medium screens: two columns */
 @media (max-width: 900px) {
