@@ -564,3 +564,116 @@ body { font-size: 1rem; }
 }
 
 /* End of stylesheet - selectors include element, class, ID, child combinator, pseudo-classes */
+
+
+/* ============================================================
+   COURSES SECTION — Simple Grid Design
+   ============================================================ */
+
+.courses-subtitle {
+    color: #888;
+    font-size: 0.95em;
+    margin-bottom: 24px;
+}
+
+/* Year block */
+.cr-year-block {
+    margin-bottom: 36px;
+}
+
+.cr-year-heading {
+    font-size: 1.05em;
+    font-weight: 700;
+    color: #FF52A0;
+    margin-bottom: 16px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #ffd6ea;
+}
+
+/* Semester block */
+.cr-sem-block {
+    margin-bottom: 20px;
+}
+
+.cr-sem-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.cr-sem-label {
+    font-size: 0.88em;
+    font-weight: 700;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cr-sem-badge {
+    font-size: 0.78em;
+    font-weight: 600;
+    color: #FF52A0;
+    background: #fff0f6;
+    border: 1px solid #ffd6ea;
+    padding: 2px 10px;
+    border-radius: 999px;
+}
+
+/* Grid of course cards */
+.cr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+/* Individual course card */
+.cr-card {
+    background: #fff;
+    border: 1.5px solid #eee;
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.cr-card:hover {
+    border-color: #ffd6ea;
+    box-shadow: 0 4px 14px rgba(255, 82, 160, 0.1);
+    transform: translateY(-3px);
+}
+
+.cr-code {
+    font-family: 'Courier New', monospace;
+    font-size: 0.78em;
+    font-weight: 700;
+    color: #fff;
+    background: #FF52A0;
+    padding: 2px 8px;
+    border-radius: 4px;
+    align-self: flex-start;
+}
+
+.cr-desc {
+    font-size: 0.88em;
+    color: #444;
+    line-height: 1.4;
+    margin: 0;
+    flex: 1;
+}
+
+.cr-credit {
+    font-size: 0.78em;
+    color: #bbb;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .cr-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 10px;
+    }
+}
